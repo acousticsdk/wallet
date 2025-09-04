@@ -334,7 +334,7 @@ const styles = StyleSheet.create({
   },
   balanceContainer: {
     alignItems: 'center',
-    marginBottom: 40,
+    marginBottom: 20,
   },
   gradientTextContainer: {
     alignItems: 'center',
