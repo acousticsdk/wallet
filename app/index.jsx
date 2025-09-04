@@ -159,6 +159,11 @@ export default function WalletScreen() {
 
   return (
     <View style={styles.container}>
+      <ScrollView style={styles.scrollView}>
+        {/* Header */}
+        <View style={styles.header}>
+          <View style={styles.titleContainer}>
+            <Text style={styles.title}>КОШЕЛЕК</Text>
           </View>
         </View>
 
@@ -280,6 +285,7 @@ export default function WalletScreen() {
 
         <View style={styles.bottomSpacing} />
       </ScrollView>
+    </View>
     </View>
   );
 }
