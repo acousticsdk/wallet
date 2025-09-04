@@ -196,16 +196,17 @@ export default function WalletScreen() {
 
         {/* Stats Row */}
         <View style={styles.statsContainer}>
-          <View style={styles.statItem}>
+          <View style={styles.statItemWithPlate}>
             <Text style={styles.statLabel}>Заморожено</Text>
             <Text style={styles.statValue}>{frozen}$</Text>
           </View>
           
-          <View style={styles.statItemCenter}>
+          <View style={styles.statItemNoPlate}>
+            <Text style={styles.statLabelCenter}>Расходы за 30 дней</Text>
             <Text style={styles.statValueCenter}>{monthlyExpenses.toLocaleString()}$</Text>
           </View>
           
-          <View style={styles.statItem}>
+          <View style={styles.statItemWithPlate}>
             <Text style={styles.statLabel}>Все расходы</Text>
             <Text style={styles.statValue}>{totalExpenses.toLocaleString()}$</Text>
           </View>
@@ -339,33 +340,36 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     paddingHorizontal: 24,
     marginBottom: 40,
-    gap: 12,
-  },
-  statItem: {
-    flex: 1,
-    backgroundColor: '#1a1a1a',
-    borderRadius: 25,
-    paddingVertical: 16,
-    paddingHorizontal: 16,
     alignItems: 'center',
-    borderWidth: 1,
-    borderColor: '#333333',
+    justifyContent: 'space-between',
   },
-  statItemCenter: {
-    flex: 1,
+  statItemWithPlate: {
+    width: 120,
     backgroundColor: '#1a1a1a',
-    borderRadius: 25,
+    borderRadius: 30,
     paddingVertical: 20,
     paddingHorizontal: 16,
     alignItems: 'center',
     borderWidth: 1,
     borderColor: '#333333',
   },
+  statItemNoPlate: {
+    flex: 1,
+    alignItems: 'center',
+    paddingHorizontal: 20,
+  },
   statLabel: {
     color: '#787878',
     fontSize: 12,
     fontFamily: 'Codec-Pro-News',
     marginBottom: 8,
+    textAlign: 'center',
+  },
+  statLabelCenter: {
+    color: '#787878',
+    fontSize: 14,
+    fontFamily: 'Codec-Pro-News',
+    marginBottom: 12,
     textAlign: 'center',
   },
   statValue: {
@@ -376,7 +380,7 @@ const styles = StyleSheet.create({
   },
   statValueCenter: {
     color: '#FFFFFF',
-    fontSize: 20,
+    fontSize: 24,
     fontFamily: 'Codec-Pro-Bold',
     textAlign: 'center',
   },
