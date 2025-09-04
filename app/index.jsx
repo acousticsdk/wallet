@@ -159,11 +159,7 @@ export default function WalletScreen() {
   );
 
   return (
-    <ImageBackground style={styles.safeArea}>
-    <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
-          {/* Header */}
-          <View style={styles.header}>
-            <View style={styles.titleContainer}>
+    <View style={styles.container}>
               <Text style={styles.title}>КОШЕЛЕК</Text>
             </View>
           </View>
@@ -286,10 +282,14 @@ export default function WalletScreen() {
 
           <View style={styles.bottomSpacing} />
     </ScrollView>
-    </ImageBackground>
+    </View>
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#000000',
+  },
   safeArea: {
     flex: 1,
     paddingTop: 80,
