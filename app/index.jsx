@@ -191,7 +191,7 @@ export default function WalletScreen() {
               </SvgText>
             </Svg>
           </View>
-          <Text style={styles.balanceSubtitle}>Расходы за 30 дней</Text>
+         
         </View>
 
         {/* Stats Row */}
