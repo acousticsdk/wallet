@@ -306,10 +306,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#000000',
   },
-  safeArea: {
-    flex: 1,
-    paddingTop: 80,
-  },
   scrollView: {
     flex: 1,
   },
