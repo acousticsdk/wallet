@@ -3,12 +3,10 @@ import {
   View, 
   Text, 
   StyleSheet, 
-  SafeAreaView, 
   ScrollView,
   TouchableOpacity,
   Image,
-  Dimensions,
-  ImageBackground
+  Dimensions
 } from 'react-native';
 import { ChevronLeft, ChevronRight } from 'lucide-react-native';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -161,13 +159,8 @@ export default function WalletScreen() {
 
   return (
     <ImageBackground 
-      source={{ uri: 'https://alfacta.online/100k/main-bg.png' }}
-      style={styles.backgroundImage}
-      resizeMode="cover"
-    >
-      <SafeAreaView style={styles.safeArea}>
-        <View style={styles.container}>
-        <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
+    <View style={styles.container}>
+      <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
           {/* Header */}
           <View style={styles.header}>
             <View style={styles.titleContainer}>
@@ -293,19 +286,15 @@ export default function WalletScreen() {
 
           <View style={styles.bottomSpacing} />
         </ScrollView>
-      </View>
-    </SafeAreaView>
-    </ImageBackground>
+      </ScrollView>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
-  backgroundImage: {
-    flex: 1,
-  },
   safeArea: {
     flex: 1,
-    backgroundColor: '#070707',
+    paddingTop: 80,
   },
   container: {
     flex: 1,
