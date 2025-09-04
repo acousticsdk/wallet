@@ -12,6 +12,7 @@ import { ChevronLeft, ChevronRight } from 'lucide-react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import Svg, { Text as SvgText, Defs, LinearGradient as SvgLinearGradient, Stop } from 'react-native-svg';
 import { BankIcon, CryptoIcon } from '../components/ui/Icons';
+import BankModal from '../components/BankModal';
 
 const { width: screenWidth } = Dimensions.get('window');
 
@@ -94,10 +95,10 @@ export default function WalletScreen() {
   const [teamMembers] = useState(MOCK_TEAM);
   const [transactions] = useState(MOCK_TRANSACTIONS);
   const [teamStartIndex, setTeamStartIndex] = useState(0);
+  const [bankModalVisible, setBankModalVisible] = useState(false);
 
   const handleBankWithdraw = () => {
-    // TODO: Логика пополнения через банк
-    console.log('Пополнение через банк');
+    setBankModalVisible(true);
   };
 
   const handleCryptoWithdraw = () => {
@@ -297,6 +298,11 @@ export default function WalletScreen() {
 
         <View style={styles.bottomSpacing} />
       </ScrollView>
+      
+      <BankModal 
+        visible={bankModalVisible} 
+        onClose={() => setBankModalVisible(false)} 
+      />
     </View>
   );
 }
