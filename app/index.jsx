@@ -196,19 +196,25 @@ export default function WalletScreen() {
 
         {/* Stats Row */}
         <View style={styles.statsContainer}>
-          <View style={styles.statItemWithPlate}>
-            <Text style={styles.statLabel}>Заморожено</Text>
-            <Text style={styles.statValue}>{frozen}$</Text>
+          <View style={styles.statColumn}>
+            <Text style={styles.statLabelAbove}>Заморожено</Text>
+            <View style={styles.statItemWithPlate}>
+              <Text style={styles.statValue}>{frozen}$</Text>
+            </View>
           </View>
           
-          <View style={styles.statItemLargePlate}>
-            <Text style={styles.statLabelCenter}>Расходы за 30 дней</Text>
-            <Text style={styles.statValueCenter}>{monthlyExpenses.toLocaleString()}$</Text>
+          <View style={styles.statColumn}>
+            <Text style={styles.statLabelAboveCenter}>Расходы за 30 дней</Text>
+            <View style={styles.statItemLargePlate}>
+              <Text style={styles.statValueCenter}>{monthlyExpenses.toLocaleString()}$</Text>
+            </View>
           </View>
           
-          <View style={styles.statItemWithPlate}>
-            <Text style={styles.statLabel}>Все расходы</Text>
-            <Text style={styles.statValue}>{totalExpenses.toLocaleString()}$</Text>
+          <View style={styles.statColumn}>
+            <Text style={styles.statLabelAbove}>Все расходы</Text>
+            <View style={styles.statItemWithPlate}>
+              <Text style={styles.statValue}>{totalExpenses.toLocaleString()}$</Text>
+            </View>
           </View>
         </View>
 
@@ -343,11 +349,28 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
   },
+  statColumn: {
+    alignItems: 'center',
+  },
+  statLabelAbove: {
+    color: '#787878',
+    fontSize: 14,
+    fontFamily: 'Codec-Pro-News',
+    marginBottom: 12,
+    textAlign: 'center',
+  },
+  statLabelAboveCenter: {
+    color: '#787878',
+    fontSize: 16,
+    fontFamily: 'Codec-Pro-News',
+    marginBottom: 12,
+    textAlign: 'center',
+  },
   statItemWithPlate: {
     width: 100,
     backgroundColor: '#1a1a1a',
     borderRadius: 25,
-    paddingVertical: 16,
+    paddingVertical: 12,
     paddingHorizontal: 16,
     alignItems: 'center',
     borderWidth: 1,
@@ -357,35 +380,21 @@ const styles = StyleSheet.create({
     width: 140,
     backgroundColor: '#1a1a1a',
     borderRadius: 35,
-    paddingVertical: 24,
+    paddingVertical: 16,
     paddingHorizontal: 20,
     alignItems: 'center',
     borderWidth: 1,
     borderColor: '#333333',
   },
-  statLabel: {
-    color: '#787878',
-    fontSize: 11,
-    fontFamily: 'Codec-Pro-News',
-    marginBottom: 6,
-    textAlign: 'center',
-  },
-  statLabelCenter: {
-    color: '#787878',
-    fontSize: 13,
-    fontFamily: 'Codec-Pro-News',
-    marginBottom: 10,
-    textAlign: 'center',
-  },
   statValue: {
     color: '#FFFFFF',
-    fontSize: 14,
+    fontSize: 16,
     fontFamily: 'Codec-Pro-Bold',
     textAlign: 'center',
   },
   statValueCenter: {
     color: '#FFFFFF',
-    fontSize: 20,
+    fontSize: 24,
     fontFamily: 'Codec-Pro-Bold',
     textAlign: 'center',
   },
