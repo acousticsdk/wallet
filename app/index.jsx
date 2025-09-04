@@ -393,7 +393,6 @@ const styles = StyleSheet.create({
     fontFamily: 'Codec-Pro-Bold',
     textAlign: 'center',
   },
-  withdrawalContainer: {
   depositContainer: {
     flexDirection: 'row',
     justifyContent: 'center',
