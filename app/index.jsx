@@ -303,7 +303,7 @@ const styles = StyleSheet.create({
   },
   header: {
     alignItems: 'center',
-    paddingTop: 20,
+    paddingTop: 60,
     paddingBottom: 40,
   },
   titleContainer: {
