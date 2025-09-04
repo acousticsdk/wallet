@@ -98,13 +98,13 @@ export default function WalletScreen() {
   const [teamStartIndex, setTeamStartIndex] = useState(0);
 
   const handleBankWithdraw = () => {
-    // TODO: Логика вывода на банк
-    console.log('Вывод на банк');
+    // TODO: Логика пополнения через банк
+    console.log('Пополнение через банк');
   };
 
   const handleCryptoWithdraw = () => {
-    // TODO: Логика вывода на крипту
-    console.log('Вывод на крипту');
+    // TODO: Логика пополнения через крипту
+    console.log('Пополнение через крипту');
   };
 
   const handleViewMoreTeam = () => {
@@ -220,19 +220,19 @@ export default function WalletScreen() {
           </View>
 
           {/* Withdrawal Methods */}
-          <View style={styles.withdrawalContainer}>
-            <TouchableOpacity style={styles.withdrawalMethod} onPress={handleBankWithdraw}>
-              <View style={styles.withdrawalIcon}>
+          <View style={styles.depositContainer}>
+            <TouchableOpacity style={styles.depositMethod} onPress={handleBankWithdraw}>
+              <View style={styles.depositIcon}>
                 <BankIcon size={32} color="#FFFFFF" />
               </View>
-              <Text style={styles.withdrawalText}>БАНК</Text>
+              <Text style={styles.depositText}>БАНК</Text>
             </TouchableOpacity>
             
-            <TouchableOpacity style={styles.withdrawalMethod} onPress={handleCryptoWithdraw}>
-              <View style={styles.withdrawalIcon}>
+            <TouchableOpacity style={styles.depositMethod} onPress={handleCryptoWithdraw}>
+              <View style={styles.depositIcon}>
                 <CryptoIcon size={32} color="#FFFFFF" />
               </View>
-              <Text style={styles.withdrawalText}>КРИПТА</Text>
+              <Text style={styles.depositText}>КРИПТА</Text>
             </TouchableOpacity>
           </View>
 
@@ -394,16 +394,17 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   withdrawalContainer: {
+  depositContainer: {
     flexDirection: 'row',
     justifyContent: 'center',
     gap: 40,
     marginBottom: 50,
   },
-  withdrawalMethod: {
+  depositMethod: {
     alignItems: 'center',
     gap: 12,
   },
-  withdrawalIcon: {
+  depositIcon: {
     width: 80,
     height: 80,
     borderRadius: 40,
@@ -413,7 +414,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#333333',
   },
-  withdrawalText: {
+  depositText: {
     color: '#FFFFFF',
     fontSize: 14,
     fontFamily: 'Codec-Pro-Bold',
