@@ -28,27 +28,18 @@ export default function RootLayout() {
   }
 
   return (
-    <ImageBackground 
-      source={{ uri: 'https://alfacta.online/100k/main-bg.png' }}
-      style={styles.container}
-      resizeMode="cover"
-    >
-      <View style={styles.overlay}>
-        <Stack screenOptions={{ headerShown: false }}>
-          <Stack.Screen name="index" />
-        </Stack>
-        <StatusBar style="light" />
-      </View>
-    </ImageBackground>
+    <View style={styles.container}>
+      <Stack screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="index" />
+      </Stack>
+      <StatusBar style="light" />
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-  },
-  overlay: {
-    flex: 1,
-    backgroundColor: 'transparent',
+    backgroundColor: '#000000',
   },
 });

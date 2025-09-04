@@ -159,7 +159,7 @@ export default function WalletScreen() {
   );
 
   return (
-    <ImageBackground style={styles.safeArea}>
+    <View style={styles.container}>
     <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
           {/* Header */}
           <View style={styles.header}>
@@ -291,8 +291,9 @@ export default function WalletScreen() {
 }
 
 const styles = StyleSheet.create({
-  safeArea: {
+  container: {
     flex: 1,
+    backgroundColor: '#000000',
     paddingTop: 80,
   },
   scrollView: {
