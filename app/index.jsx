@@ -207,6 +207,8 @@ export default function WalletScreen() {
             <Text style={styles.statLabelAboveCenter}>Расходы за 30 дней</Text>
             <LinearGradient
               colors={['#151716', '#414242', '#151716']}
+              start={{ x: 0, y: 0 }}
+              end={{ x: 1, y: 0 }}
               style={styles.statItemLargePlate}
             >
               <Text style={styles.statValueCenter}>{monthlyExpenses.toLocaleString()}$</Text>
