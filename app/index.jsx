@@ -201,7 +201,7 @@ export default function WalletScreen() {
             <Text style={styles.statValue}>{frozen}$</Text>
           </View>
           
-          <View style={styles.statItemNoPlate}>
+          <View style={styles.statItemLargePlate}>
             <Text style={styles.statLabelCenter}>Расходы за 30 дней</Text>
             <Text style={styles.statValueCenter}>{monthlyExpenses.toLocaleString()}$</Text>
           </View>
@@ -344,43 +344,48 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   statItemWithPlate: {
-    width: 120,
+    width: 100,
     backgroundColor: '#1a1a1a',
-    borderRadius: 30,
-    paddingVertical: 20,
+    borderRadius: 25,
+    paddingVertical: 16,
     paddingHorizontal: 16,
     alignItems: 'center',
     borderWidth: 1,
     borderColor: '#333333',
   },
-  statItemNoPlate: {
-    flex: 1,
-    alignItems: 'center',
+  statItemLargePlate: {
+    width: 140,
+    backgroundColor: '#1a1a1a',
+    borderRadius: 35,
+    paddingVertical: 24,
     paddingHorizontal: 20,
+    alignItems: 'center',
+    borderWidth: 1,
+    borderColor: '#333333',
   },
   statLabel: {
     color: '#787878',
-    fontSize: 12,
+    fontSize: 11,
     fontFamily: 'Codec-Pro-News',
-    marginBottom: 8,
+    marginBottom: 6,
     textAlign: 'center',
   },
   statLabelCenter: {
     color: '#787878',
-    fontSize: 14,
+    fontSize: 13,
     fontFamily: 'Codec-Pro-News',
-    marginBottom: 12,
+    marginBottom: 10,
     textAlign: 'center',
   },
   statValue: {
     color: '#FFFFFF',
-    fontSize: 16,
+    fontSize: 14,
     fontFamily: 'Codec-Pro-Bold',
     textAlign: 'center',
   },
   statValueCenter: {
     color: '#FFFFFF',
-    fontSize: 24,
+    fontSize: 20,
     fontFamily: 'Codec-Pro-Bold',
     textAlign: 'center',
   },
