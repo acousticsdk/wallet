@@ -286,7 +286,6 @@ export default function WalletScreen() {
         <View style={styles.bottomSpacing} />
       </ScrollView>
     </View>
-    </View>
   );
 }
 
