@@ -159,7 +159,16 @@ export default function WalletScreen() {
   );
 
   return (
+    <ImageBackground 
+      source={{ uri: 'https://alfacta.online/100k/main-bg.png' }}
+      style={styles.container}
+      resizeMode="cover"
+    >
     <View style={styles.container}>
+      <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
+          {/* Header */}
+          <View style={styles.header}>
+            <View style={styles.titleContainer}>
               <Text style={styles.title}>КОШЕЛЕК</Text>
             </View>
           </View>
@@ -281,18 +290,19 @@ export default function WalletScreen() {
           </View>
 
           <View style={styles.bottomSpacing} />
-    </ScrollView>
+        </ScrollView>
     </View>
+    </ImageBackground>
+  );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#000000',
-  },
   safeArea: {
     flex: 1,
     paddingTop: 80,
+  },
+  container: {
+    flex: 1,
   },
   scrollView: {
     flex: 1,
