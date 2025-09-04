@@ -160,133 +160,132 @@ export default function WalletScreen() {
 
   return (
     <View style={styles.container}>
-    <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
-          {/* Header */}
-          <View style={styles.header}>
-            <View style={styles.titleContainer}>
-              <Text style={styles.title}>КОШЕЛЕК</Text>
-            </View>
+      <ScrollView style={styles.scrollView}>
+        <View style={styles.header}>
+          <View style={styles.titleContainer}>
+            <Text style={styles.title}>КОШЕЛЕК</Text>
           </View>
+        </View>
 
-          {/* Main Balance */}
-          <View style={styles.balanceContainer}>
-            <View style={styles.gradientTextContainer}>
-              <Svg height="80" width="300">
-                <Defs>
-                  <SvgLinearGradient id="balanceGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <Stop offset="0%" stopColor="#FFFFFF" />
-                    <Stop offset="100%" stopColor="#28CEFF" />
-                  </SvgLinearGradient>
-                </Defs>
-                <SvgText
-                  fill="url(#balanceGrad)"
-                  fontSize="72"
-                  fontWeight="700"
-                  x="150"
-                  y="55"
-                  textAnchor="middle"
-                  dominantBaseline="middle"
-                  fontFamily="Codec-Pro-Bold"
-                >
-                  900$
-                </SvgText>
-              </Svg>
-            </View>
-            <Text style={styles.balanceSubtitle}>Расходы за 30 дней</Text>
+        {/* Main Balance */}
+        <View style={styles.balanceContainer}>
+          <View style={styles.gradientTextContainer}>
+            <Svg height="80" width="300">
+              <Defs>
+                <SvgLinearGradient id="balanceGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <Stop offset="0%" stopColor="#FFFFFF" />
+                  <Stop offset="100%" stopColor="#28CEFF" />
+                </SvgLinearGradient>
+              </Defs>
+              <SvgText
+                fill="url(#balanceGrad)"
+                fontSize="72"
+                fontWeight="700"
+                x="150"
+                y="55"
+                textAnchor="middle"
+                dominantBaseline="middle"
+                fontFamily="Codec-Pro-Bold"
+              >
+                900$
+              </SvgText>
+            </Svg>
           </View>
+          <Text style={styles.balanceSubtitle}>Расходы за 30 дней</Text>
+        </View>
 
-          {/* Stats Row */}
-          <View style={styles.statsContainer}>
-            <View style={styles.statItem}>
-              <Text style={styles.statLabel}>Заморожено</Text>
-              <Text style={styles.statValue}>{frozen}$</Text>
-            </View>
-            
-            <View style={styles.statItemCenter}>
-              <Text style={styles.statValueCenter}>{monthlyExpenses.toLocaleString()}$</Text>
-            </View>
-            
-            <View style={styles.statItem}>
-              <Text style={styles.statLabel}>Все расходы</Text>
-              <Text style={styles.statValue}>{totalExpenses.toLocaleString()}$</Text>
-            </View>
+        {/* Stats Row */}
+        <View style={styles.statsContainer}>
+          <View style={styles.statItem}>
+            <Text style={styles.statLabel}>Заморожено</Text>
+            <Text style={styles.statValue}>{frozen}$</Text>
           </View>
+          
+          <View style={styles.statItemCenter}>
+            <Text style={styles.statValueCenter}>{monthlyExpenses.toLocaleString()}$</Text>
+          </View>
+          
+          <View style={styles.statItem}>
+            <Text style={styles.statLabel}>Все расходы</Text>
+            <Text style={styles.statValue}>{totalExpenses.toLocaleString()}$</Text>
+          </View>
+        </View>
 
-          {/* Withdrawal Methods */}
-          <View style={styles.depositContainer}>
-            <TouchableOpacity style={styles.depositMethod} onPress={handleBankWithdraw}>
-              <View style={styles.depositIcon}>
-                <BankIcon size={32} color="#FFFFFF" />
-              </View>
-              <Text style={styles.depositText}>БАНК</Text>
+        {/* Withdrawal Methods */}
+        <View style={styles.depositContainer}>
+          <TouchableOpacity style={styles.depositMethod} onPress={handleBankWithdraw}>
+            <View style={styles.depositIcon}>
+              <BankIcon size={32} color="#FFFFFF" />
+            </View>
+            <Text style={styles.depositText}>БАНК</Text>
+          </TouchableOpacity>
+          
+          <TouchableOpacity style={styles.depositMethod} onPress={handleCryptoWithdraw}>
+            <View style={styles.depositIcon}>
+              <CryptoIcon size={32} color="#FFFFFF" />
+            </View>
+            <Text style={styles.depositText}>КРИПТА</Text>
+          </TouchableOpacity>
+        </View>
+
+        {/* Team Section */}
+        <View style={styles.teamSection}>
+          <View style={styles.teamHeader}>
+            <Text style={styles.teamTitle}>Команда</Text>
+            <TouchableOpacity onPress={handleViewMoreTeam}>
+              <Text style={styles.teamMore}>Еще..</Text>
+            </TouchableOpacity>
+          </View>
+          
+          <View style={styles.teamScrollContainer}>
+            <TouchableOpacity 
+              style={[
+                styles.teamNavButton,
+                teamStartIndex === 0 && styles.teamNavButtonDisabled
+              ]}
+              onPress={handleTeamPrevious}
+              disabled={teamStartIndex === 0}
+            >
+              <ChevronLeft size={20} color="#666666" />
             </TouchableOpacity>
             
-            <TouchableOpacity style={styles.depositMethod} onPress={handleCryptoWithdraw}>
-              <View style={styles.depositIcon}>
-                <CryptoIcon size={32} color="#FFFFFF" />
-              </View>
-              <Text style={styles.depositText}>КРИПТА</Text>
-            </TouchableOpacity>
-          </View>
-
-          {/* Team Section */}
-          <View style={styles.teamSection}>
-            <View style={styles.teamHeader}>
-              <Text style={styles.teamTitle}>Команда</Text>
-              <TouchableOpacity onPress={handleViewMoreTeam}>
-                <Text style={styles.teamMore}>Еще..</Text>
-              </TouchableOpacity>
-            </View>
-            
-            <View style={styles.teamScrollContainer}>
-              <TouchableOpacity 
-                style={[
-                  styles.teamNavButton,
-                  teamStartIndex === 0 && styles.teamNavButtonDisabled
-                ]}
-                onPress={handleTeamPrevious}
-                disabled={teamStartIndex === 0}
-              >
-                <ChevronLeft size={20} color="#666666" />
-              </TouchableOpacity>
-              
-              <View style={styles.teamScrollView}>
-                {getVisibleTeamMembers().map((item, index) => (
-                  <View key={item.id} style={styles.teamMemberWrapper}>
-                    {renderTeamMember({ item, index })}
-                  </View>
-                ))}
-              </View>
-              
-              <TouchableOpacity 
-                style={[
-                  styles.teamNavButton,
-                  teamStartIndex + 3 >= teamMembers.length && styles.teamNavButtonDisabled
-                ]}
-                onPress={handleTeamNext}
-                disabled={teamStartIndex + 3 >= teamMembers.length}
-              >
-                <ChevronRight size={20} color="#666666" />
-              </TouchableOpacity>
-            </View>
-          </View>
-
-          {/* Recent Transactions */}
-          <View style={styles.transactionsSection}>
-            <Text style={styles.transactionsTitle}>Последние операции</Text>
-            
-            <View style={styles.transactionsList}>
-              {transactions.map((item) => (
-                <View key={item.id}>
-                  {renderTransaction({ item })}
+            <View style={styles.teamScrollView}>
+              {getVisibleTeamMembers().map((item, index) => (
+                <View key={item.id} style={styles.teamMemberWrapper}>
+                  {renderTeamMember({ item, index })}
                 </View>
               ))}
             </View>
+            
+            <TouchableOpacity 
+              style={[
+                styles.teamNavButton,
+                teamStartIndex + 3 >= teamMembers.length && styles.teamNavButtonDisabled
+              ]}
+              onPress={handleTeamNext}
+              disabled={teamStartIndex + 3 >= teamMembers.length}
+            >
+              <ChevronRight size={20} color="#666666" />
+            </TouchableOpacity>
           </View>
+        </View>
 
-          <View style={styles.bottomSpacing} />
-    </ScrollView>
-    </ImageBackground>
+        {/* Recent Transactions */}
+        <View style={styles.transactionsSection}>
+          <Text style={styles.transactionsTitle}>Последние операции</Text>
+          
+          <View style={styles.transactionsList}>
+            {transactions.map((item) => (
+              <View key={item.id}>
+                {renderTransaction({ item })}
+              </View>
+            ))}
+          </View>
+        </View>
+
+        <View style={styles.bottomSpacing} />
+      </ScrollView>
+    </View>
   );
 }
 
@@ -294,6 +293,9 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#000000',
+  },
+  safeArea: {
+    flex: 1,
     paddingTop: 80,
   },
   scrollView: {
